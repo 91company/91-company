@@ -8,7 +8,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;                      /* White text for visibility */
-    height: 100vh;                    /* Full viewport height */
+    min-height: 100vh;                /* Full viewport height */
 }
 
 /* Header */
@@ -117,18 +117,25 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Contact Section */
+#contact p {
+    font-size: 22px;              /* Bigger font */
+    font-weight: bold;            /* Bold text */
+    color: #f1c40f;               /* Golden color */
+    text-align: center;           /* Centered text */
+    margin: 10px 0;               /* Spacing */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#contact a {
+    color: #f1c40f;
+    text-decoration: none;  
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 36px;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-    }
-
-    header .logo {
-        max-width: 250px; /* Adjust for smaller screens */
-    }
-}
+    hea
