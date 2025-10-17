@@ -3,8 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* Light blue background */
-    /* background-image: url('background.jpg'); */
+    background-image: url('91.png');  /* Background image */
     background-size: cover;
     background-position: center;
     color: #333;
@@ -13,30 +12,33 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay */
+    border-bottom: 2px solid #3498db;
 }
 
 header .logo {
-    width: 100px;
+    width: 120px; /* Adjust logo size */
     height: auto;
     margin-bottom: 10px;
 }
 
 header h1 {
     color: #2c3e50;
+    font-size: 36px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 10px 0;
 }
 
 header p {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* Navigation */
 nav {
     text-align: center;
     background: #3498db;
-    padding: 10px 0;
+    padding: 12px 0;
 }
 
 nav a {
@@ -44,6 +46,7 @@ nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 16px;
 }
 
 nav a:hover {
@@ -52,18 +55,18 @@ nav a:hover {
 
 /* Sections */
 section {
-    padding: 20px;
-    max-width: 700px;
-    margin: auto;
-    background: rgba(255,255,255,0.9);
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    padding: 25px;
+    max-width: 750px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 section h2 {
     color: #e74c3c;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 /* Forms */
@@ -89,6 +92,7 @@ button {
     border-radius: 5px;
     font-size: 16px;
     margin-top: 10px;
+    transition: background 0.3s;
 }
 
 button:hover {
@@ -102,4 +106,16 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
 }
