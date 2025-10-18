@@ -1,174 +1,146 @@
-/* General Body */
+/* General body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 80px 0 0 0;
-    background: linear-gradient(135deg, #1d2671, #c33764); /* gradient color */
-    color: #fff;
-    min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fa;
+  color: #333;
+  text-align: center;
 }
 
 /* Header */
 header {
-    text-align: center;
-    padding: 100px 20px 50px 20px;
-    background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #0b132b, #1c2541);
+  color: #f1c40f;
+  padding: 40px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
-
-header .headline {
-    color: #f1c40f;
-    font-size: 80px;
-    font-weight: bold;
-    text-shadow: 4px 4px 10px rgba(0,0,0,0.7);
-    margin: 0;
-}
-
-header p {
-    font-size: 24px;
-    color: #ffffff;
-    margin-top: 15px;
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
 }
 
 /* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    background: rgba(52, 152, 219, 0.9);
-    padding: 15px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
+header nav ul li {
+  margin: 0 15px;
 }
-
-nav a:hover {
-    text-decoration: underline;
+header nav ul li a {
+  text-decoration: none;
+  color: #f1c40f;
+  font-weight: bold;
+  transition: 0.3s;
+}
+header nav ul li a:hover {
+  color: #42a5f5;
+  transform: scale(1.1);
 }
 
 /* Sections */
 section {
-    padding: 30px;
-    max-width: 800px;
-    margin: 40px auto;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  position: relative;
+  color: white;
 }
 
-section h2 {
-    color: #f39c12;
-    text-align: center;
-    margin-bottom: 20px;
+/* Home Section */
+section.home {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
 }
 
-section p {
-    color: #ffffff;
-    font-size: 18px;
+/* Join Us Section */
+section.join {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+}
+section.join button {
+  background: #0b132b;
+  color: #f1c40f;
 }
 
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
+/* Girls Help Section */
+section.girls-help {
+  background: linear-gradient(135deg, #d81b60, #f06292);
 }
-
-input, textarea {
-    margin: 10px 0;
-    padding: 14px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-}
-
-button {
-    padding: 14px;
-    background-color: #e67e22;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 18px;
-    margin-top: 12px;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #d35400;
+section.girls-help button {
+  background: #0b132b;
+  color: #f1c40f;
 }
 
 /* Contact Section */
-#contact p {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f1c40f;
-    text-align: center;
-    margin: 10px 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+section.contact {
+  background: linear-gradient(135deg, #1c2541, #0b132b);
 }
 
-/* Social Media Buttons */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    gap: 25px;
+/* Section Titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+section p {
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
-.social-btn {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+/* Icons */
+section .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
 }
 
-/* WhatsApp Button */
-.whatsapp-btn {
-    background-color: #25D366;
+/* Input fields and textarea */
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+input:focus, textarea:focus {
+  outline: 2px solid #f1c40f;
 }
 
-.whatsapp-btn:hover {
-    background-color: #1ebe57;
-    transform: scale(1.1);
+/* Buttons */
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  transform: translateY(-2px);
 }
 
-/* Instagram Button */
-.instagram-btn {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+/* Links */
+a {
+  color: #f1c40f;
+  text-decoration: none;
 }
-
-.instagram-btn:hover {
-    opacity: 0.85;
-    transform: scale(1.1);
-}
+a:hover { color: #42a5f5; }
 
 /* Responsive */
-@media (max-width: 768px) {
-    header .headline {
-        font-size: 50px;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-    }
-
-    section {
-        padding: 20px;
-        margin: 20px auto;
-    }
+@media (max-width: 650px){
+  header h1 { font-size: 2.2rem; }
+  header nav ul { flex-direction: column; }
+  header nav ul li { margin: 10px 0; }
+  section { padding: 20px 15px; }
+  section h2 { font-size: 1.5rem; }
 }
