@@ -144,3 +144,36 @@ a:hover { color: #42a5f5; }
   section { padding: 20px 15px; }
   section h2 { font-size: 1.5rem; }
 }
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1c40f;
+  color: #0b132b;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.contact-buttons .btn:hover {
+  transform: translateY(-2px);
+  background: #42a5f5;
+  color: white;
+}
+
+/* Instagram button color */
+.contact-buttons .btn.insta { background: #E1306C; color: white; }
+.contact-buttons .btn.insta:hover { background: #C13584; }
+
+/* WhatsApp button color */
+.contact-buttons .btn.whatsapp { background: #25D366; color: white; }
+.contact-buttons .btn.whatsapp:hover { background: #128C7E; }
