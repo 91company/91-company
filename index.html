@@ -1,77 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>91 Company</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background: #f1f1f1;
-      margin:0;
-      padding:0;
-      text-align:center;
-    }
-    header{
-      background:#0b132b;
-      color:#f1c40f;
-      padding:40px 20px;
-    }
-    h1{ font-size: 3em; margin:0; }
-    section{
-      padding:40px 20px;
-      max-width:600px;
-      margin:auto;
-      background:white;
-      margin-top:20px;
-      border-radius:10px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
-    h2{color:#0b132b;}
-    input, textarea, button{
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-      border-radius:5px;
-      border:1px solid #ccc;
-      font-size:1em;
-    }
-    button{
-      background:#0b132b;
-      color:white;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    button:hover{ background:#1976d2; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91 Company</title>
+<link rel="stylesheet" href="style.css">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+<!-- Header with Navigation -->
 <header>
   <h1>91 COMPANY</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#join">Join Us</a></li>
+      <li><a href="#girls-help">Girls Help</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+<!-- Home Section -->
+<section id="home" class="home">
+  <h2>Welcome to 91 Company</h2>
+  <p>Helping underprivileged families, supporting hospitals, and providing aid across Maharashtra.</p>
+</section>
+
 <!-- Join Us Section -->
-<section>
+<section id="join" class="join">
+  <div class="icon"><i class="fas fa-users"></i></div>
   <h2>Join Our Team</h2>
+  <p>Become a volunteer and help us serve underprivileged families across Maharashtra.</p>
   <form id="joinForm">
     <input type="text" id="joinName" placeholder="Your Name" required>
     <input type="email" id="joinEmail" placeholder="Your Email" required>
     <textarea id="joinMessage" placeholder="Message / Skills" required></textarea>
-    <button type="submit">Join Us</button>
+    <button type="submit"><i class="fas fa-paper-plane"></i> Join Us</button>
   </form>
 </section>
 
 <!-- Girls Help Section -->
-<section>
+<section id="girls-help" class="girls-help">
+  <div class="icon"><i class="fas fa-female"></i></div>
   <h2>Girls Help & Safety</h2>
+  <p>If you have a problem or need assistance, we are here to help. Submit your request safely and confidentially.</p>
   <form id="helpForm">
     <input type="text" id="helpName" placeholder="Your Name" required>
     <textarea id="helpIssue" placeholder="Describe your problem" required></textarea>
-    <button type="submit">Send Help Request</button>
+    <button type="submit"><i class="fas fa-hand-holding-heart"></i> Send Help Request</button>
   </form>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Instagram: <a href="https://instagram.com/rohya_0507" target="_blank">@rohya_0507</a></p>
+  <p>WhatsApp: +91 95884 25240</p>
 </section>
 
 </body>
