@@ -6,7 +6,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
         const targetSection = document.getElementById(targetId);
         if(targetSection){
             window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust for nav height
+                top: targetSection.offsetTop - 70, // Adjust for fixed nav height
                 behavior: 'smooth'
             });
         }
@@ -15,14 +15,14 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 // Join Us Form
 document.getElementById('joinForm').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent actual submission
+    e.preventDefault();  
     alert('Thank you for joining! We will contact you soon.');
-    this.reset(); // Clear the form
+    this.reset(); 
 });
 
 // Girls Help Form
 document.getElementById('girlsForm').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent actual submission
+    e.preventDefault();  
     alert('Your message has been received. We will help you shortly.');
-    this.reset(); // Clear the form
+    this.reset(); 
 });
