@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>91 Company Admin Panel</title>
+<style>
+  body{font-family:Arial,sans-serif;background:#0b132b;color:white;padding:20px;text-align:center;}
+  h1{color:#f1c40f;}
+  table{width:100%;border-collapse:collapse;margin:20px auto;background:#1c2541;}
+  th, td{padding:10px;border:1px solid #3a506b;}
+  th{background:#3a506b;}
+  .btn{padding:8px 16px;border:none;border-radius:6px;background:#1976d2;color:white;cursor:pointer;margin:5px;}
+  .danger{background:#d32f2f;}
+  .section-title{margin-top:30px;color:#f1c40f;}
+</style>
+</head>
+<body>
+<h1>91 Company Admin Panel</h1>
+
+<button id="loginBtn" class="btn">Sign in with Google</button>
+<button id="logoutBtn" class="btn danger" style="display:none">Sign out</button>
+<p>Signed in as: <span id="userEmail">Not signed in</span></p>
+
+<div id="content" style="display:none">
+  <h2 class="section-title">Join Requests</h2>
+  <table id="joinTable"><tr><th>Name</th><th>Email</th><th>Message</th><th>Date</th></tr></table>
+
+  <h2 class="section-title">Girls Help Requests</h2>
+  <table id="helpTable"><tr><th>Name</th><th>Issue</th><th>Date</th></tr></table>
+</div>
+
+<div id="notAllowed" style="display:none">
+  <h3>Access denied</h3>
+  <p>You are signed in but not authorized to view this admin panel.</p>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyDXoxbtTv2E4_0AtRCmPqmcagHhV4UAOMY",
+  authDomain: "company-83930.firebaseapp.com",
+  projectId: "company-83930",
+  storageBucket: "company-83930.firebasestorage.app",
+  messagingSenderId: "369546639953",
+  appId: "1:369546639953:web:dfbb575fffb2a687165670",
+  measurementId: "G-EZ739F6CF0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+const ADMIN_EMAIL = "rohitwanjare91@gmail.com";
+
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const userEmailEl = document.getElementById('userEmail');
+const contentEl = document.getElementById('content');
+const notAllowedEl = document.getElementById('notAllowed');
+
+loginBtn.onclick = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider).catch(err=>alert(err.message));
+};
+logoutBtn.onclick = () => signOut(auth);
+
+onAuthStateChanged(auth, async (user) => {
+  if(user){
+    userEmailEl.textContent = user.email;
+    loginBtn.style.display='none';
+    logoutBtn.style.display='inline-block';
+    if(user.email === ADMIN_EMAIL){
+      notAllowedEl.style.display='none';
+      contentEl.style.display='block';
+      loadJoinRequests();
+      loadGirlsRequests();
+    } else{
+      contentEl.style.display='none';
+      notAllowedEl.style.display='block';
+    }
+  } else{
+    userEmailEl.textContent='Not signed in';
+    loginBtn.style.display='inline-block';
+    logoutBtn.style.display='none';
+    contentEl.style.display='none';
+    notAllowedEl.style.display='none';
+  }
+});
+
+async function loadJoinRequests(){
+  const joinSnap = await getDocs(collection(db, "join_requests"));
+  const joinTable = document.getElementById("joinTable");
+  joinTable.innerHTML = `<tr><th>Name</th><th>Email</th><th>Message</th><th>Date</th></tr>`;
+  joinSnap.forEach(doc=>{
+    const d=doc.data();
+    const row = `<tr><td>${d.name}</td><td>${d.email}</td><td>${d.message}</td><td>${d.timestamp?.toDate ? d.timestamp.toDate().toLocaleString() : ''}</td></tr>`;
+    joinTable.innerHTML += row;
+  });
+}
+
+async function loadGirlsRequests(){
+  const helpSnap = await getDocs(collection(db, "girls_help"));
+  const helpTable = document.getElementById("helpTable");
+  helpTable.innerHTML = `<tr><th>Name</th><th>Issue</th><th>Date</th></tr>`;
+  helpSnap.forEach(doc=>{
+    const d=doc.data();
+    const row = `<tr><td>${d.name}</td><td>${d.issue}</td><td>${d.timestamp?.toDate ? d.timestamp.toDate().toLocaleString() : ''}</td></tr>`;
+    helpTable.innerHTML += row;
+  });
+}
+</script>
+</body>
+</html>
