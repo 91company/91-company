@@ -2,9 +2,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 80px 0 0 0;   /* Top padding for fixed nav */
     background-image: url('91.png');  /* Full-page background */
-    background-size: cover;           /* Cover entire screen */
+    background-size: cover;           
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;                      
@@ -14,7 +14,7 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 80px 20px;               
+    padding: 100px 20px 50px 20px;               
     background: rgba(0, 0, 0, 0.5);  
 }
 
@@ -34,9 +34,15 @@ header p {
 
 /* Navigation */
 nav {
+    position: fixed;                 
+    top: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    background: rgba(52, 152, 219, 0.8); 
+    background: rgba(52, 152, 219, 0.9); 
     padding: 15px 0;
+    z-index: 1000;                   
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 nav a {
