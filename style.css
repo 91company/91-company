@@ -3,45 +3,39 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('91.png');  /* Full-page background image */
+    background-image: url('91.png');  /* Full-page background */
     background-size: cover;           /* Cover entire screen */
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;                      /* White text for visibility */
-    min-height: 100vh;                /* Full viewport height */
+    color: #fff;                      
+    min-height: 100vh;                
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 50px 20px;               /* More padding for full logo */
-    background: rgba(0, 0, 0, 0.4);  /* Transparent dark overlay for contrast */
+    padding: 80px 20px;               
+    background: rgba(0, 0, 0, 0.5);  
 }
 
-header .logo {
-    width: 100%;                      /* Full-width logo */
-    max-width: 400px;                 /* Limit maximum size */
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;         /* Center logo with margin below */
-}
-
-header h1 {
-    color: #ffffff;
-    font-size: 48px;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-    margin: 10px 0;
+header .headline {
+    color: #f1c40f;                    
+    font-size: 80px;                   
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0,0,0,0.7);
+    margin: 0;
 }
 
 header p {
-    font-size: 20px;
-    color: #f0f0f0;
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 15px;
 }
 
 /* Navigation */
 nav {
     text-align: center;
-    background: rgba(52, 152, 219, 0.8); /* Semi-transparent nav */
+    background: rgba(52, 152, 219, 0.8); 
     padding: 15px 0;
 }
 
@@ -62,7 +56,7 @@ section {
     padding: 30px;
     max-width: 800px;
     margin: 40px auto;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6); 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
@@ -119,11 +113,11 @@ a:hover {
 
 /* Contact Section */
 #contact p {
-    font-size: 22px;              /* Bigger font */
-    font-weight: bold;            /* Bold text */
-    color: #f1c40f;               /* Golden color */
-    text-align: center;           /* Centered text */
-    margin: 10px 0;               /* Spacing */
+    font-size: 22px;              
+    font-weight: bold;            
+    color: #f1c40f;               
+    text-align: center;           
+    margin: 10px 0;               
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
@@ -138,4 +132,17 @@ a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    hea
+    header .headline {
+        font-size: 50px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
